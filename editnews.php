@@ -15,11 +15,11 @@ cswebsite
 <body>
 	<main>
 	
-		<div id = "newsposts" class = "mobile col-m-10 col-l-10">
+		<div id = "newsposts" class = "mobile col-m-12 col-l-12">
 		
 			<?php 
 			$currentDate = date("Y/m/d");
-			$querystring = "SELECT * FROM `NewsPosts` where DateStart <= '".$currentDate."' and DateExpired >= '".$currentDate."' order by DateExpired desc;";
+			$querystring = "SELECT * FROM `NewsPosts` order by DateExpired desc;";
 			
 			$db = new PDO("mysql:dbname=cswebsite; host=localhost", "root");
 			$rows = $db->query($querystring);
@@ -28,16 +28,35 @@ cswebsite
 			
 			foreach ($rows as $row) 
 			{
-				if(strlen($row["Body"]) > 50){
-				?><div class = 'content col-l-10 col-m-5'><?php	
-				}else{
-				?><div class = 'content col-l-5 col-m-5'><?php
-				}?>
-					<h2><?= $row["Title"]?></h2>
-					<P>
-						<?= $row["Body"]?>
+				
+				?>
+				<div class = 'content col-l-5 col-m-5'>
+					
+					
+				<form action = "submitchange.php" method = "POST">
+			
+					<p>
+						Author of news post: <input type = "text" name = "author" value = "<?=$row["Author"]?>">
+					<p>
+						Title of news post <br>
+						<input type = "text" name = "title" value = "<?=$row["Title"]?>">
 					</p>
-					<span class = 'small'><?= $row["Author"]?></span>
+					<p>
+						<textarea id = 'textbox' name="body" rows="20" cols="70"><?=$row["Body"]?></textarea>
+					</p>
+					<p>
+					Show from: 
+					<input type = "text" class = "datepicker" name = "start" value = "<?=$row["DateStart"]?>">
+					To: 
+					<input type = "text" class = "datepicker" name = "expire" value = "<?=$row["DateExpired"]?>"><br>
+					</p>
+					
+					<input type="hidden" name="id" value="<?=$row["id"]?>">
+					
+					<input type="submit" value="Submit">
+				
+					</form>
+				
 				</div>
 			<?php
 			}?>

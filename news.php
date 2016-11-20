@@ -10,23 +10,34 @@ cswebsite
 </head>
 <body>
 	<main>
-		<header id = 'newsheader' class = 'col-m-10 col-l-10'>
+		<header id = 'newsheader' class = 'col-m-12 col-l-12'>
 			New page title
 		</header>
 		
-		<nav class = "mobile col-m-2 col-l-2">
-			<ul>
-			  <li>
-				<a href='index.html'>Home</a></li>
-			  <li>
-				<a href='news.php' class = 'active'>News</a></li>
-			  <li>
-				<a href='index.html'>Alumni</a></li>
-			  <li>
-				<a href='index.html'>Not sure yet</a></li>
-			</ul>
-		</nav>
+		<div id = "sidebar" class = 'col-m-2 col-l-2'>
+			<nav>
+				<ul id = "navlist">
+				  <li>
+					<a href='index.html'>Home</a></li>
+				  <li>
+					<a href='news.php' class = 'active'>News</a></li>
+				  <li>
+					<a href='index.html'>Alumni</a></li>
+				  <li>
+					<a href='index.html'>Not sure yet</a></li>
+				</ul>
+			</nav>
 
+			<div id = "images">
+				<ul id = "imagelist">
+					<li>IMAGES</li>
+					<li>IMAGES</li>
+					<li>IMAGES</li>
+					<li>IMAGES</li>
+				</ul>
+			</div>
+		
+		</div>
 		
 		
 		<div id = "newsposts" class = "mobile col-m-10 col-l-10">
@@ -43,7 +54,7 @@ cswebsite
 			foreach ($rows as $row) 
 			{
 				if(strlen($row["Body"]) > 50){
-				?><div class = 'content col-l-10 col-m-5'><?php	
+				?><div class = 'content col-l-11 col-m-5'><?php	
 				}else{
 				?><div class = 'content col-l-5 col-m-5'><?php
 				}?>
@@ -58,14 +69,7 @@ cswebsite
 		
 		</div>
 		
-		<div id = "images" class = "mobile col-m-2 col-l-2">
-			<ul id = "imagelist">
-				<li>IMAGES</li>
-				<li>IMAGES</li>
-				<li>IMAGES</li>
-				<li>IMAGES</li>
-			</ul>
-		</div>
+		
 		
 	</main>
 	<footer>
