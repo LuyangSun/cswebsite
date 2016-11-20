@@ -70,10 +70,7 @@ body
 	float:left;
 }
 
-#topnav .dis{display:list-item;   width:80px;   height:auto;   border:1px solid red;   overflow:hidden;  }  
-#topnavli{ list-style:none; overflow:hidden;height:22px; width:82px;}  
-#topnav a{ display:block; width:80px; height:20px; text-decoration:none; color:#000; border:1px solid green; text-align:center;}   
-#topnav li:hover{ height:auto;}
+
 
 #images
 {
