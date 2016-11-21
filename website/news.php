@@ -12,9 +12,9 @@ cswebsite
 	<main>
 		<div id="top">
 			<ul class="topnav" id="myTopnav">
-				<li><a href="">Home</a></li>
+				<li><a href="index.html">Home</a></li>
 				<li><a class="active" href="news.php">News</a></li>
-				<li><a href="timeline.php">Alumni</a></li>
+				<li><a href="timeline.html">Alumni</a></li>
 				</li>
 			</ul>
 		</div>
