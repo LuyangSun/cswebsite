@@ -5,21 +5,23 @@
 cswebsite
 </title>
 <meta charset = 'utf-8'>
-<link rel='stylesheet' href='styles.css'>
-<script src='java.js' type='text/javascript'></script>
+<link rel='stylesheet' href='website/styles.css'>
+<script src='website/java.js' type='text/javascript'></script>
 </head>
 <body>
 	<main>
-		<div>
-			<header>
-				<h1>
-					cswebsite
-				</h1>
-			</header>
+		<div id="top">
+			<ul class="topnav" id="myTopnav">
+				<li><a href="editnews.php">Edit News Articles</a></li>
+				<li><a class="active" href="addnews.html">Add News Articles</a></li>
+				</li>
+			</ul>
 		</div>
-	
-		<nav>
-		</nav>
+		
+		<header id = 'newsheader' class = 'col-m-10 col-l-10'>
+			Add a new news article
+		</header>
+		
 			<h3>
 				Thank you, <?=$_POST["firstname"];?>, your news post will be added!<br>
 				Click <a href="addnews.html">here</a> to make more changes!
@@ -42,7 +44,7 @@ cswebsite
 			$querystring = "INSERT INTO `newsposts`(`Title`, `Body`, `DateStart`, `DateExpired`, `DateCreated`, `Author`) 
 			VALUES ('".$title."','".$body."','".$start."','".$expire."','".$currentdate."','".$author."')";
 			
-			echo $querystring;
+			//echo $querystring;
 			
 			$db = new PDO("mysql:dbname=cswebsite;host=localhost", "root");
 			$rows = $db->query($querystring);

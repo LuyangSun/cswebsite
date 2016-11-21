@@ -5,21 +5,22 @@
 cswebsite
 </title>
 <meta charset = 'utf-8'>
-<link rel='stylesheet' href='styles.css'>
-<script src='java.js' type='text/javascript'></script>
+<link rel='stylesheet' href='website/styles.css'>
+<script src='website/java.js' type='text/javascript'></script>
 </head>
 <body>
 	<main>
-		<div>
-			<header>
-				<h1>
-					cswebsite
-				</h1>
-			</header>
+		<div id="top">
+			<ul class="topnav" id="myTopnav">
+				<li><a class="active" href="editnews.php">Edit News Articles</a></li>
+				<li><a href="addnews.html">Add News Articles</a></li>
+				</li>
+			</ul>
 		</div>
-	
-		<nav>
-		</nav>
+		
+		<header id = 'newsheader' class = 'col-m-10 col-l-10'>
+			Edit news articles
+		</header>
 			<h3>
 				Thank you, <?=$_POST["author"];?>, your news post will be added!<br>
 				Click <a href="editnews.php">here</a> to make more changes!
@@ -46,7 +47,7 @@ cswebsite
 			DateStart='".$start."',DateExpired='".$expire."',Author='".$author."' WHERE id =".$ID.";";
 			
 			
-			echo $querystring;
+			//echo $querystring;
 			
 			$db = new PDO("mysql:dbname=cswebsite;host=localhost", "root");
 			$rows = $db->query($querystring);

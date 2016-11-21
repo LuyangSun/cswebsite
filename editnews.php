@@ -6,15 +6,25 @@ cswebsite
 </title>
 <meta charset = 'utf-8'>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel='stylesheet' href='styles.css'>
+<link rel='stylesheet' href='website/styles.css'>
 
-<script src='java.js' type='text/javascript'></script>
+<script src='website/java.js' type='text/javascript'></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 	<main>
-	
+	<div id="top">
+			<ul class="topnav" id="myTopnav">
+				<li><a class="active" href="editnews.php">Edit News Articles</a></li>
+				<li><a href="addnews.html">Add News Articles</a></li>
+				</li>
+			</ul>
+		</div>
+		
+		<header id = 'newsheader' class = 'col-m-10 col-l-10'>
+			Add a new news article
+		</header>
 		<div id = "newsposts" class = "mobile col-m-12 col-l-12">
 		
 			<?php 
