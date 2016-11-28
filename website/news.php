@@ -19,46 +19,47 @@ cswebsite
 			</ul>
 		</div>
 		
-		<header id = 'newsheader' class = 'col-m-10 col-l-10'>
+		<header id = 'newsheader' class = 'col-s-10 col-m-10 col-l-10'>
 			News Page
 		</header>
 
-		
-		<div id = "images">
-			Images of the cs department are going to go here. 
-		</div>
-		
-		
-		<div id = "newsposts" class = "mobile col-m-10 col-l-10">
-		
-			<?php 
-			$currentDate = date("Y/m/d");
-			$querystring = "SELECT * FROM `NewsPosts` where DateStart <= '".$currentDate."' and DateExpired >= '".$currentDate."' order by DateExpired desc;";
+		<div id = "wrapper">
 			
-			$db = new PDO("mysql:dbname=cswebsite; host=localhost", "root");
-			$rows = $db->query($querystring);
-			//echo $currentDate;
-			//echo $querystring;
+			<div id = "images" class = "col-m-1 col-m-1 col-l-1">
+				Images of the cs department are going to go here. 
+			</div>
 			
-			foreach ($rows as $row) 
-			{
-				if(strlen($row["Body"]) > 150){
-				?><div class = 'content col-l-5 col-m-5'><?php	
-				}else{
-				?><div class = 'content col-l-5 col-m-5'><?php
+			
+			<div id = "newsposts" class = "col-m-11 col-m-11 col-l-11">
+			
+				<?php 
+				$currentDate = date("Y/m/d");
+				$querystring = "SELECT * FROM `NewsPosts` where DateStart <= '".$currentDate."' and DateExpired >= '".$currentDate."' order by DateExpired desc;";
+				
+				$db = new PDO("mysql:dbname=cswebsite; host=localhost", "root");
+				$rows = $db->query($querystring);
+				//echo $currentDate;
+				//echo $querystring;
+				
+				foreach ($rows as $row) 
+				{
+					if(strlen($row["Body"]) > 250){
+					?><div class = 'content col-s-10 col-l-10 col-m-10'><?php	
+					}else{
+					?><div class = 'content col-s-10 col-l-5 col-m-5'><?php
+					}?>
+						<h2><?= $row["Title"]?></h2>
+						<P>
+							<?= $row["Body"]?>
+						</p>
+						<span class = 'small'><?= $row["Author"]?></span>
+					</div>
+				<?php
 				}?>
-					<h2><?= $row["Title"]?></h2>
-					<P>
-						<?= $row["Body"]?>
-					</p>
-					<span class = 'small'><?= $row["Author"]?></span>
-				</div>
-			<?php
-			}?>
+			
+			</div>
 		
 		</div>
-		
-		
 		
 		
 	</main>

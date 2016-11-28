@@ -22,10 +22,10 @@ cswebsite
 			</ul>
 		</div>
 		
-		<header id = 'newsheader' class = 'col-m-10 col-l-10'>
+		<header id = 'newsheader' class = 'col-s-10 col-m-10 col-l-10'>
 			Add a new news article
 		</header>
-		<div id = "newsposts" class = "mobile col-m-12 col-l-12">
+		<div id = "newsposts" class = "col-s-12 col-m-12 col-l-12">
 		
 			<?php 
 			$currentDate = date("Y/m/d");
@@ -40,19 +40,20 @@ cswebsite
 			{
 				
 				?>
-				<div class = 'content col-l-5 col-m-5'>
+				<div class = 'editcontent col-l-5 col-m-5'>
 					
 					
 				<form action = "submitchange.php" method = "POST">
 			
 					<p>
 						Author of news post: <input type = "text" name = "author" value = "<?=$row["Author"]?>">
+					</p>
 					<p>
 						Title of news post <br>
 						<input type = "text" name = "title" value = "<?=$row["Title"]?>">
 					</p>
 					<p>
-						<textarea id = 'textbox' name="body" rows="20" cols="70"><?=$row["Body"]?></textarea>
+						<textarea class = 'textbox textboxsize' name="body"><?=$row["Body"]?></textarea>
 					</p>
 					<p>
 					Show from: 
@@ -63,7 +64,7 @@ cswebsite
 					
 					<input type="hidden" name="id" value="<?=$row["id"]?>">
 					
-					<input type="submit" value="Submit">
+					<input class = "submitbutton" type="submit" value="Make changes">
 				
 					</form>
 				
