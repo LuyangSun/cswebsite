@@ -12,19 +12,18 @@ cswebsite
 	<main>
 		<div id="top">
 			<ul class="topnav" id="myTopnav">
-				<li><a href="editnews.php">Edit News Articles</a></li>
-				<li><a class="active" href="addnews.html">Add News Articles</a></li>
+				<li><a class="active" href="editnews.php">Edit News Articles</a></li>
+				<li><a href="addnews.html">Add News Articles</a></li>
 				</li>
 			</ul>
 		</div>
 		
 		<header id = 'newsheader' class = 'col-m-10 col-l-10'>
-			Add a new news article
+			Edit news articles
 		</header>
-		
 			<h3>
-				Thank you, <?=$_POST["firstname"];?>, your news post will be added!<br>
-				Click <a href="addnews.html">here</a> to make more changes!
+				Thank you, <?=$_POST["author"];?>, your news post will be added!<br>
+				Click <a href="editnews.php">here</a> to make more changes!
 			</h3>
 			<?php
 			$time = strtotime($_POST["start"]);
@@ -32,17 +31,21 @@ cswebsite
 			
 			$time = strtotime($_POST["expire"]);
 			$expire = date('Y-m-d',$time);
-			$author = $_POST['firstname']." ".$_POST['lastname'];
+			$author = $_POST['author'];
 			$title = $_POST["title"];
 			$body = $_POST["body"];
+			
+			$ID = $_POST["id"];
+			
 			$currentdate = date("Y-m-d");
 			
 			$author = addslashes($author);
 			$body = addslashes($body);
 			$title = addslashes($title);
 			
-			$querystring = "INSERT INTO `newsposts`(`Title`, `Body`, `DateStart`, `DateExpired`, `DateCreated`, `Author`) 
-			VALUES ('".$title."','".$body."','".$start."','".$expire."','".$currentdate."','".$author."')";
+			$querystring = "UPDATE newsposts SET Title='".$title."',Body='".$body."',
+			DateStart='".$start."',DateExpired='".$expire."',Author='".$author."' WHERE id =".$ID.";";
+			
 			
 			//echo $querystring;
 			
