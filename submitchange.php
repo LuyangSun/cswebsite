@@ -10,6 +10,9 @@ cswebsite
 </head>
 <body>
 	<main>
+		<div id = "maintitle">
+			Winona State Computer Science Admin
+		</div>
 		<div id="top">
 			<ul class="topnav" id="myTopnav">
 				<li><a class="active" href="editnews.php">Edit News Articles</a></li>
@@ -22,10 +25,11 @@ cswebsite
 			Edit news articles
 		</header>
 			<h3>
-				Thank you, <?=$_POST["author"];?>, your news post will be added!<br>
+				Thank you, your changes will be made!<br>
 				Click <a href="editnews.php">here</a> to make more changes!
 			</h3>
 			<?php
+			
 			$time = strtotime($_POST["start"]);
 			$start = date('Y-m-d',$time);
 			
@@ -46,12 +50,20 @@ cswebsite
 			$querystring = "UPDATE newsposts SET Title='".$title."',Body='".$body."',
 			DateStart='".$start."',DateExpired='".$expire."',Author='".$author."' WHERE id =".$ID.";";
 			
+			$querystring2 = "delete from newsposts WHERE id =".$ID.";";
 			
 			//echo $querystring;
 			
-			$db = new PDO("mysql:dbname=cswebsite;host=localhost", "root");
-			$rows = $db->query($querystring);
-			
+			if(isset($_POST["delete"]))
+			{
+				$db = new PDO("mysql:dbname=cswebsite;host=localhost", "root");
+				$rows = $db->query($querystring2);
+			}
+			else
+			{
+				$db = new PDO("mysql:dbname=cswebsite;host=localhost", "root");
+				$rows = $db->query($querystring);
+			}
 			?>
 			
 		</div>

@@ -10,6 +10,9 @@ cswebsite
 </head>
 <body>
 	<main>
+		<div id = "maintitle">
+			Winona State Computer Science Admin
+		</div>
 		<div id="top">
 			<ul class="topnav" id="myTopnav">
 				<li><a href="editnews.php">Edit News Articles</a></li>
