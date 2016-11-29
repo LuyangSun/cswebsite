@@ -14,6 +14,9 @@ cswebsite
 </head>
 <body>
 	<main>
+	<div id = "maintitle">
+		Winona State Computer Science Admin
+	</div>
 	<div id="top">
 			<ul class="topnav" id="myTopnav">
 				<li><a class="active" href="editnews.php">Edit News Articles</a></li>
@@ -44,7 +47,7 @@ cswebsite
 					
 					
 				<form action = "submitchange.php" method = "POST">
-			
+					<input type = "checkbox" name = "delete" value = "delete">Remove post?
 					<p>
 						Author of news post: <input type = "text" name = "author" value = "<?=$row["Author"]?>">
 					</p>
