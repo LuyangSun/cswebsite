@@ -25,10 +25,10 @@ cswebsite
 			News Page
 		</header>
 
-		<div id = "wrapper">
+		<div class = "wrapper">
 			
-			<div id = "images" class = "col-m-1 col-m-1 col-l-1">
-				Images of the cs department are going to go here. 
+			<div id = "images" class = "absolute col-m-1 col-m-1 col-l-1">
+				<img src="pictures/logo.jpg" alt="Winona State Logo" width = "100%">
 			</div>
 			
 			
@@ -46,9 +46,9 @@ cswebsite
 				foreach ($rows as $row) 
 				{
 					if(strlen($row["Body"]) > 250){
-					?><div class = 'content col-s-10 col-l-10 col-m-10'><?php	
+					?><div class = 'content marginspacing col-s-10 col-l-10 col-m-10'><?php	
 					}else{
-					?><div class = 'content col-s-10 col-l-5 col-m-5'><?php
+					?><div class = 'content marginspacing col-s-10 col-l-5 col-m-5'><?php
 					}?>
 						<h2><?= $row["Title"]?></h2>
 						<P>

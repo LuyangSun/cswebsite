@@ -23,6 +23,12 @@ html
     .col-s-11 {width: 91.66%;}
     .col-s-12 {width: 100%;}
 	
+	.marginspacing
+	{
+		margin-right: 0px;
+		margin-bottom: 5px;
+	}
+	
 }
 
 @media only screen and (min-width: 560px) {
@@ -40,6 +46,11 @@ html
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
 	
+	.marginspacing
+	{
+		margin-right: 5px;
+		margin-bottom: 5px;
+	}
 }
 @media only screen and (min-width: 1200px) {
     /* For desktop: */
@@ -56,6 +67,11 @@ html
     .col-l-11 {width: 91.66%;}
     .col-l-12 {width: 100%;}
 
+	.marginspacing
+	{
+		margin-right: 5px;
+		margin-bottom: 5px;
+	}
 }
 
 body
@@ -70,6 +86,13 @@ h2
 	font-family: "Courier New", Courier, monospace;
 	font-size: 1.3em;
 	text-align: center;
+}
+
+hr
+{
+	height: 5px;
+	border-radius: 5px 5px 5px 5px;
+	background-color: white;
 }
 
 #maintitle
@@ -127,6 +150,18 @@ h2
 	float:left;
 }
 
+#quote
+{
+	font-size: 1.5em;
+	text-align: center;
+	display: inline-block;
+}
+
+.center
+{
+	text-align: center;
+}
+
 .content
 {
 	border-radius: 18px;
@@ -136,8 +171,6 @@ h2
 	padding: 5px;
 	text-align:left;
 	color: #F7F7F7;
-	margin-right: 5px;
-	margin-bottom: 5px;
 }
 
 .editcontent
@@ -158,12 +191,10 @@ h2
 	border-radius: 18px;
 	background-color: #2B1657;
 	background-size: cover;
-	background-repeat: no-repeat;
-	float: right;
+	display: inline-block;
 	padding: 5px;
+	text-align: left;
 	color: #F7F7F7;
-	margin-right: 10px;
-	margin-bottom: 10px;
 }
 
 
