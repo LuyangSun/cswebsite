@@ -2,25 +2,34 @@
 <html lang = 'en'>
 <head>
 <title>
-cswebsite
+Add News
 </title>
 <meta charset = 'utf-8'>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel='stylesheet' href='styles.css'>
+<link rel='stylesheet' href='website/styles.css'>
 
-<script src='java.js' type='text/javascript'></script>
+<script src='website/java.js' type='text/javascript'></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 	<main>
-		<header>
+		<div id = "maintitle">
+			Winona State Computer Science Admin
+		</div>
+		<div id="top">
+			<ul class="topnav" id="myTopnav">
+				<li><a href="editnews.php">Edit News Articles</a></li>
+				<li><a class="active" href="addnews.html">Add News Articles</a></li>
+				</li>
+			</ul>
+		</div>
+		
+		<header id = 'newsheader' class = 'col-m-10 col-l-10'>
+			Add a new news article
 		</header>
-		<nav>
-		</nav>
 		<div class = "addcontent col-l-12 col-m-12 col-s-12">
-			<form action = "submit.php" method = "POST">
-			
+			<form action = "submit.php" method = "POST"> 
 				<p>
 					First Name: <input type = "text" name = "firstname">&nbsp;&nbsp;
 					Last Name: <input type = "text" name = "lastname">
@@ -30,13 +39,13 @@ cswebsite
 					<input type = "text" name = "title">
 				</p>
 				<p>
-					<textarea id = 'textbox' name="body" rows="20" cols="70"></textarea>
+					<textarea class = 'textbox' name="body" ></textarea>
 				</p>
 				<p>
-				Show from: 
-				<input type = "text" class = "datepicker" name = "start">
-				To: 
-				<input type = "text" class = "datepicker" name = "expire"><br>
+					Show from: 
+						<input type = "text" class = "datepicker" name = "start">
+					To: 
+						<input type = "text" class = "datepicker" name = "expire"><br>
 				</p>
 				
 				<input type="submit" value="Submit">
